@@ -47,7 +47,7 @@ class Feature_Extractor:
     def mel(self, y):
         assert np.max(y) <= 1, np.max(y)
         mel_spec = librosa.feature.melspectrogram(
-            y,
+            y=y,
             sr=self.sr,
             n_fft=self.n_fft,
             hop_length=self.hop,
@@ -66,7 +66,7 @@ class Feature_Extractor:
     def pcen(self, y):
         assert np.max(y) <= 1
         mel_spec = librosa.feature.melspectrogram(
-            y * (2**32),
+            y=y * (2**32),
             sr=self.sr,
             n_fft=self.n_fft,
             hop_length=self.hop,

@@ -29,7 +29,7 @@ def main(config: DictConfig):
 
     # Train model
     return train(config)
-
+ 
 
 if __name__ == "__main__":
     main()
