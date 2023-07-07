@@ -1,6 +1,6 @@
 import torch
 
-torch.use_deterministic_algorithms(True)
+torch.use_deterministic_algorithms(False)
 # torch.backends.cudnn.enabled = False
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = True
