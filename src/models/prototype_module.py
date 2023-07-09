@@ -340,7 +340,7 @@ class PrototypeModule(LightningModule):
         save_pickle(tpr_vs_efpr, "tpr_vs_efpr.pkl")
         self.log("psds", psds.value)
 
-    def on_test_epoch_end(self, outputs: List[Any]):
+    def on_test_epoch_end(self):
         # self.split_long_segments_based_on_energy() # TODO checkout if you need this function
         best_result = None
         best_f_measure = 0.0
