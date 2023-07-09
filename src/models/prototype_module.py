@@ -340,7 +340,7 @@ class PrototypeModule(LightningModule):
         save_pickle(tpr_vs_efpr, "tpr_vs_efpr.pkl")
         self.log("psds", psds.value)
 
-    def test_epoch_end(self, outputs: List[Any]):
+    def on_test_epoch_end(self, outputs: List[Any]):
         # self.split_long_segments_based_on_energy() # TODO checkout if you need this function
         best_result = None
         best_f_measure = 0.0
@@ -398,37 +398,6 @@ class PrototypeModule(LightningModule):
             step_size=self.hparams.train.scheduler_step_size,
         )
         return [optim], [lr_scheduler]
-
-    # def merging_segment(self, pos_onset_offset, neg_min_length, max_len):
-    #     onset, offset = [], []
-    #     i = 0
-    #     while(i < len(pos_onset_offset)):
-
-    #         if(i >= len(pos_onset_offset) - 1): return onset, offset
-
-    #         on, off = pos_onset_offset[i]
-    #         on_next, off_next = pos_onset_offset[i+1]
-    #         # on_next_next, off_next_next = pos_onset_offset[i+2]
-
-    #         # if(is_all_negative(on, off)): continue
-    #         # Divide big segment into small segments
-    #         if((off_next-on) * self.fps < 1.2*max_len or (on_next-off) * self.fps < 0.8 * neg_min_length):
-    #             onset.append(on)
-    #             offset.append(off_next)
-    #             while((off_next-on) * self.fps < 1.2*max_len or (on_next-off) * self.fps < 0.8 * neg_min_length):
-    #                 i += 1
-    #                 offset[-1] = off_next
-    #                 off = off_next
-    #                 on_next, off_next = pos_onset_offset[i+1]
-    #             print("merge", (off_next-on) * self.fps, (on_next-off) * self.fps, max_len, neg_min_length)
-
-    #         # Do not change this segment
-    #         else:
-    #             onset.append(on)
-    #             offset.append(off)
-    #         i += 1
-
-    #     return onset, offset
 
     def merging_segment(self, pos_onset_offset, neg_min_length, max_len):
         onset, offset = [], []
