@@ -33,7 +33,7 @@ defaults:
 # path to original working directory
 # hydra hijacks working directory by changing it to the new log directory
 # https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
-original_work_dir: ${hydra:runtime.cwd}
+original_work_dir: /content/drive/MyDrive/TFM/task5/DCASE_2022_Task_5
 
 # path to folder with data
 data_dir: ${original_work_dir}/data/
@@ -69,7 +69,7 @@ set:
 
 path:
   # From the log directory
-  root_dir: /vol/research/dcase2022/project/t5_open_source/DCASE_2022_Task_5/
+  root_dir: /content/drive/MyDrive/TFM/task5/DCASE_2022_Task_5
   train_dir: ${path.root_dir}/Development_Set/Training_Set
   eval_dir: ${path.root_dir}/Development_Set/Validation_Set
   # test_dir: ${path.root_dir}/Test_Set
