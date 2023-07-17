@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("/vol/research/dcase2022/project/t5_open_source/DCASE_2022_Task_5")
+sys.path.append("/content/drive/MyDrive/TFM/task5/DCASE_2022_Task_5'")
 from email.mime import audio
 from re import L
 from typing import Any, List
@@ -298,10 +298,10 @@ class PrototypeModule(LightningModule):
         alpha_st = 0.0
         max_efpr = 100
         ground_truth_csv = os.path.join(
-            "/vol/research/dcase2022/project/hhlab/src/models/eval_meta/subset_gt.csv"
+            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_gt.csv"
         )
         metadata_csv = os.path.join(
-            "/vol/research/dcase2022/project/hhlab/src/models/eval_meta/subset_meta.csv"
+            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_meta.csv"
         )
         gt_table = pd.read_csv(ground_truth_csv, sep="\t")
         meta_table = pd.read_csv(metadata_csv, sep="\t")
@@ -355,7 +355,7 @@ class PrototypeModule(LightningModule):
                     "Endtime": self.onset_offset[k]["offset_arr"],
                 }
             )
-            os.makedirs(str(k), exist_ok=False)
+            os.makedirs(str(k), exist_ok=True)
             csv_path = "%s/Eval_raw.csv" % k
             df_out.to_csv(csv_path, index=False)
             # Postprocessing and evaluate
@@ -1066,10 +1066,10 @@ if __name__ == "__main__":
         alpha_st = 0.0
         max_efpr = 100
         ground_truth_csv = os.path.join(
-            "/vol/research/dcase2022/project/hhlab/src/models/eval_meta/subset_gt.csv"
+            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_gt.csv"
         )
         metadata_csv = os.path.join(
-            "/vol/research/dcase2022/project/hhlab/src/models/eval_meta/subset_meta.csv"
+            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_meta.csv"
         )
         gt_table = pd.read_csv(ground_truth_csv, sep="\t")
         meta_table = pd.read_csv(metadata_csv, sep="\t")

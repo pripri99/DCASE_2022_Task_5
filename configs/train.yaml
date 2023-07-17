@@ -7,8 +7,8 @@ defaults:
   - model: protonet.yaml
   # - model: byol.yaml
   - callbacks: default.yaml
-  - logger: wandb.yaml
-  # - logger: tensorboard.yaml
+  #- logger: wandb.yaml
+  - logger: tensorboard.yaml
   - trainer: default.yaml
   - log_dir: default.yaml
 
