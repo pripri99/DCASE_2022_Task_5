@@ -298,10 +298,10 @@ class PrototypeModule(LightningModule):
         alpha_st = 0.0
         max_efpr = 100
         ground_truth_csv = os.path.join(
-            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_gt.csv"
+            "./src/models/eval_meta/subset_gt.csv"
         )
         metadata_csv = os.path.join(
-            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_meta.csv"
+            "./src/models/eval_meta/subset_meta.csv"
         )
         gt_table = pd.read_csv(ground_truth_csv, sep="\t")
         meta_table = pd.read_csv(metadata_csv, sep="\t")
@@ -1066,10 +1066,10 @@ if __name__ == "__main__":
         alpha_st = 0.0
         max_efpr = 100
         ground_truth_csv = os.path.join(
-            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_gt.csv"
+            "./src/models/eval_meta/subset_gt.csv"
         )
         metadata_csv = os.path.join(
-            "/content/DCASE_2022_Task_5/src/models/eval_meta/subset_meta.csv"
+            "./src/models/eval_meta/subset_meta.csv"
         )
         gt_table = pd.read_csv(ground_truth_csv, sep="\t")
         meta_table = pd.read_csv(metadata_csv, sep="\t")
